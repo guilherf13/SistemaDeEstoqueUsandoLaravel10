@@ -14,13 +14,12 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.page-init');
-})->name('defalte');
-
-Route::get('/register', [ProductController::class, 'show'])->name('register');
+Route::get('/', [ProductController::class, 'show'])->name('productList');
 Route::post('/store', [ProductController::class, 'store'])->name('store');
-
+Route::get('/formProductRegistrer', [ProductController::class, 'formProductRegistrer'])->name('formProductRegistrer');
+Route::get('/formProductUpdate/{id}', [ProductController::class, 'formProductUpdate'])->name('formProductUpdate');
+Route::get('/deleteProduct/{id}', [ProductController::class, 'delete'])->name('deleteProduct');
+Route::post('/updateProduct/{id}', [ProductController::class, 'update'])->name('updateProduct');
 Route::fallback(function () {
     return "Pagina Não encontrada";
 });

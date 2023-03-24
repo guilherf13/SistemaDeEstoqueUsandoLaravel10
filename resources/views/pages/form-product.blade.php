@@ -1,10 +1,5 @@
 @extends('defalte')
 @section('body')
-<menu>
-    <li><a href="/">Home</a></li>
-    <li><a href="/">Sobre Nos</a></li>
-    <li><a href="/">Contatos</a></li>
-</menu>
     <form action="{{Route('store')}}" method="POST">
         @csrf
         <label for="product">Produto</label>
