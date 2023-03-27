@@ -23,7 +23,7 @@ class ProductController extends Controller
             $product->value = $request->value;
             $product->save();
 
-        return redirect()->route('productList');
+        return redirect()->route('show');
         
         
     }
@@ -33,7 +33,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->delete();
 
-        return redirect()->route('productList');
+        return redirect()->route('show');
     }
 
     public function update(Request $request, $id)
@@ -45,7 +45,7 @@ class ProductController extends Controller
         $product->value = $request->input('value'); 
         $product->save();
         
-        return redirect()->route('productList');
+        return redirect()->route('show');
     }
 
     public function formProductRegistrer()
