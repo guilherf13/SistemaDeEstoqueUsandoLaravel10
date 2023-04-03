@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('model', 50)->nullable(false);
             $table->string('color', 30)->nullable(false);
             $table->float('value')->nullable(false)->default(0.0);
+            $table->integer('product_quantity');
             $table->timestamps();
             
         });
