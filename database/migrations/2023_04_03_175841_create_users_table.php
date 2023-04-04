@@ -11,20 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('shopping_id');
             $table->string('name', 80);
             $table->string('password', 80);
             $table->string('cpf', 11);
             $table->string('email', 50);
-            $table->integer('phone');
+            $table->string('phone');
+            $table->string('birthday', 20);
             $table->string('address', 100);
             $table->timestamps();
-
-            //constrant
-
-            $table->foreign('shopping_id')->references('id')->on('shoppings');
+            
         });
     }
 

@@ -14,7 +14,15 @@ return new class extends Migration
         Schema::create('shoppings', function (Blueprint $table) {
             $table->id();
             $table->string('form_payment',30);
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('shopping_id');
+            $table->integer('product_shopping_quantity');
             $table->timestamps();
+
+            //Constrant
+
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('shopping_id')->references('id')->on('shoppings');
         });
     }
 
