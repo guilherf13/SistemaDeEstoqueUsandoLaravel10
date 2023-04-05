@@ -6,7 +6,7 @@
         <input id="product" type="text" name="product" value="{{$product['product']}}">
         <label for="characteristic">Caracteristicas</label>
         <textarea id="characteristic" name="characteristic" cols="30" rows="10">{{$product['characteristic']}}</textarea>
-        <label for="color">Cor</label>
+        <label for="color">Cor do Produto</label>
         <input id="color" type="text" name="color" value="{{$product['color']}}">
         <label for="value">Valor</label>
         <input id="value" type="text" name="value" value="{{$product['value']}}">
