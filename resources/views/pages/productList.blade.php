@@ -4,9 +4,10 @@
     @foreach ($productAll as $item)
         <hr>
             - {{$item['product']}}
-            - {{$item['model']}} 
+            - {{$item['characteristic']}} 
             - {{$item['color']}} 
-            - {{$item['value']}} 
+            - {{$item['value']}}
+            - Quantidade em Estoque = {{$item['product_quantity']}}
             <a href="{{route('deleteProduct', ['id' => $item['id']])}}">Delete</a> /
             <a href="{{route('formProductUpdate', ['id' => $item['id']])}}">Atualizar Dados</a>
         <hr>

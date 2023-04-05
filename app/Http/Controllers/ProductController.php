@@ -15,12 +15,12 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-
             $product = new Product;
             $product->product = $request->product;
-            $product->model = $request->model;
+            $product->characteristic = $request->characteristic;
             $product->color = $request->color;
             $product->value = $request->value;
+            $product->product_quantity = $request->product_quantity;
             $product->save();
 
         return redirect()->route('show');
@@ -37,12 +37,13 @@ class ProductController extends Controller
     }
 
     public function update(Request $request, $id)
-    {
+    {       
         $product = Product::find($id);
         $product->product = $request->input('product');
-        $product->model = $request->input('model');
+        $product->characteristic = $request->input('characteristic');
         $product->color = $request->input('color');
-        $product->value = $request->input('value'); 
+        $product->value = $request->input('value');
+        $product->product_quantity = $request->input('product_quantity');
         $product->save();
         
         return redirect()->route('show');
